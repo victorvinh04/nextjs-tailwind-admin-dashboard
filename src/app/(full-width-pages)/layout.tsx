@@ -1,0 +1,8 @@
+"use client";
+export default function FullWidthPageLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <div className="h-svh w-full flex flex-1 flex-col pb-2">{children}</div>;
+}
