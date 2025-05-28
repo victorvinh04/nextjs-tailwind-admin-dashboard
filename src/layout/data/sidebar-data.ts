@@ -19,38 +19,33 @@ import {
   IconUserCog,
   IconUserOff,
   IconUsers,
-  IconGrid4x4
+  IconGrid4x4,
+  IconBook2,
+  IconSettings2,
+  IconSandbox,
+  IconFrame,
+  IconChartPie,
+  IconMap2,
+  IconCommand,
+  IconDotsVertical,
+  IconUserX,
+  IconUser,
+  IconPassword,
+  IconPhoneCall,
+  IconAlertCircle,
+  IconImageInPicture,
+  IconBadge,
+  IconBread,
+  IconCards,
+  IconCarouselVertical,
+  IconDropletDown,
+  IconPhotoAi,
+  IconSlash,
+  IconList,
+  IconTools,
+  IconVideo,
+  IconClipboard
 } from '@tabler/icons-react'
-import {  
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-  GalleryVerticalEnd,
-  AudioWaveform,
-  LayoutDashboard,
-  Codesandbox,
-} from 'lucide-react';
-
-import {
-  BoxCubeIcon,
-  CalenderIcon,
-  ChevronDownIcon,
-  GridIcon,
-  HorizontaLDots,
-  ListIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
-  UserCircleIcon,
-} from "@/icons/index";
 
 
 export const sidebarData: SidebarData = {
@@ -62,24 +57,19 @@ export const sidebarData: SidebarData = {
   teams: [
     {
       name: "Acme Inc",
-      logo: GalleryVerticalEnd,
+      logo: IconDotsVertical,
       plan: "Enterprise",
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
       name: "Shadcn Admin",
-      logo: Command,
+      logo: IconCommand,
       plan: "Next + ShadcnUI",
     },
   ],
   navMain: [
     {      
         title: "Dashboard",
-        icon: LayoutDashboard,
+        icon: IconGrid4x4,
         isActive: true,
         items: [
         {
@@ -94,47 +84,15 @@ export const sidebarData: SidebarData = {
             title: "Forms",
             href: "/form",
         },
+        {
+          title: "Chat Page",
+          href: "/chats",
+      },
         ]
     },
     {
-        title: "Playground",
-        icon: SquareTerminal,
-        items: [
-            {
-                title: "History",
-                href: "#",
-            },
-            {
-                title: "Starred",
-                href: "#",
-            },
-            {
-                title: "Settings",
-                href: "#",
-            },
-        ],
-    },
-    {
-      title: "Models",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          href: "#",
-        },
-        {
-          title: "Explorer",
-          href: "#",
-        },
-        {
-          title: "Quantum",
-          href: "#",
-        },
-      ],
-    },
-    {
       title: "Documentation",
-      icon: BookOpen,
+      icon: IconBook2,
       items: [
         {
           title: "Introduction",
@@ -156,7 +114,7 @@ export const sidebarData: SidebarData = {
     },
     {
       title: "Settings",
-      icon: Settings2,
+      icon: IconSettings2,
       items: [
         {
           title: "General",
@@ -219,6 +177,7 @@ export const sidebarData: SidebarData = {
             {
               title: 'Sign In',
               href: '/sign-in',
+              icon: IconUserX,
             },
             {
               title: 'Sign In (2 Col)',
@@ -227,14 +186,17 @@ export const sidebarData: SidebarData = {
             {
               title: 'Sign Up',
               href: '/sign-up',
+              icon: IconUser,
             },
             {
               title: 'Forgot Password',
               href: '/forgot-password',
+              icon: IconPassword,
             },
             {
               title: 'OTP',
               href: '/otp',
+              icon: IconPhoneCall
             },
           ],
         },
@@ -271,47 +233,57 @@ export const sidebarData: SidebarData = {
         },
         {
           title: 'UI-Elements',
-          icon: Codesandbox,
+          icon: IconSandbox,
           items: [
             {
               title: 'Alerts',
               href: '/alerts',
+              icon: IconAlertCircle,
             },
             {
               title: 'avatar',
               href: '/avatars',
+              icon: IconImageInPicture
             },
             {
               title: 'Badge',
               href: '/badge',
+              icon: IconBadge,
             },
             {
               title: 'Breadcrumb',
               href: '/breadcrumb',
+              icon: IconBread,
             },
             {
               title: 'Cards',
               href: '/cards',
+              icon: IconCards,
             },
             {
               title: 'Carousel',
-              href: '/cards',
+              href: '/carousel',
+              icon: IconCarouselVertical,
             },
             {
               title: 'Dropdowns',
               href: '/dropdowns',
+              icon: IconDropletDown,
             },
             {
               title: 'Images',
               href: '/images',
+              icon: IconPhotoAi
             },
             {
               title: 'Links',
               href: '/links',
+              icon: IconSlash
             },
             {
               title: 'list',
               href: '/list',
+              icon: IconList
             },
             {
               title: 'Modals',
@@ -320,6 +292,7 @@ export const sidebarData: SidebarData = {
             {
               title: 'Notification',
               href: '/notification',
+              icon: IconMessages
             },
             {
               title: 'Pagination',
@@ -332,14 +305,17 @@ export const sidebarData: SidebarData = {
             {
               title: 'Progressbar',
               href: '/progressbar',
+              icon: IconClipboard
             },
             {
               title: 'Tooltips',
               href: '/tooltips',
+              icon: IconTools
             },
             {
               title: 'Videos',
               href: '/videos',
+              icon: IconVideo
             },
           ],
         },
@@ -379,31 +355,27 @@ export const sidebarData: SidebarData = {
             },
           ],
         },
-        {
-          title: 'Help Center',
-          href: '/help-center',
-          icon: IconHelp,
-        },
       ],
     },
     {
-    title: 'projects',
-    items: [{
-      title: "Design Engineering",
-      href: "#",
-      icon: Frame,
-    },
-    {
-      title: "Sales & Marketing",
-      href: "#",
-      icon: PieChart,
-    },
-    {
-      title: "Travel",
-      href: "#",
-      icon: Map,
-    },]}
-  ],
-  projects: [
+      title: 'projects',
+      items: [
+        {
+          title: "Design Engineering",
+          href: "#",
+          icon: IconFrame,
+        },
+        {
+          title: "Sales & Marketing",
+          href: "#",
+          icon: IconChartPie,
+        },
+        {
+          title: "Travel",
+          href: "#",
+          icon: IconMap2,
+        },
+      ]
+    }
   ],
 }

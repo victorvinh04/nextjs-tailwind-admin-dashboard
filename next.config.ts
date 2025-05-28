@@ -4,7 +4,6 @@ import path from "path";
 const nextConfig: NextConfig = {
   /* config options here */
     experimental:{
-      dynamicIO: true,
       authInterrupts: true
     },
   webpack(config) {

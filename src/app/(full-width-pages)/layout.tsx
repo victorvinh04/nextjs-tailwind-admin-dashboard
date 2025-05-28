@@ -4,5 +4,5 @@ export default function FullWidthPageLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="h-svh w-full flex flex-1 flex-col pb-2">{children}</div>;
+  return <div className="min-h-screen flex flex-1 flex-col pb-2">{children}</div>;
 }
