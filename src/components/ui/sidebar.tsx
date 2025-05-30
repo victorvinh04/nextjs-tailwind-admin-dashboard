@@ -85,7 +85,7 @@ const SidebarProvider = React.forwardRef<
     },
     ref
   ) => {
-  const isMobile = useIsMobile()
+  const { isMobile } = useIsMobile()
     const [openMobile, setOpenMobile] = React.useState(false);
 
     const [isExpanded, setIsExpanded] = React.useState(true);
@@ -298,11 +298,9 @@ const Sidebar = React.forwardRef<
             : isHovered
             ? "w-[290px]"
             : "w-[90px]",
-        isMobile ? "translate-x-0" : "-translate-x-full",
+            isExpanded ? "translate-x-0" : "-translate-x-full",
         'lg:translate-x-0'
         )}
-      onMouseEnter={() => !isExpanded && setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
 
       {/* This is what handles the sidebar gap on desktop */}
@@ -348,7 +346,7 @@ const Sidebar = React.forwardRef<
             )}
           </Link>
         </div>
-        <div className={cn('flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar', className)}>
+        <div className={cn('flex flex-col overflow-y-auto duration-300 ease-linear', className)}>
           <nav className="mb-6">
             <div className="flex flex-col gap-4 p-2">
               <div>              
@@ -370,6 +368,8 @@ const SidebarTrigger = React.forwardRef<
 >(({ className, onClick, ...props }, ref) => 
   {
     const { toggleSidebar } = useSidebar()
+
+    // const handleToggleForSidebar = handleToggle();
 
     return (
       <Button

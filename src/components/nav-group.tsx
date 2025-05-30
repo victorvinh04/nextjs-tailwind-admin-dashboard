@@ -3,11 +3,11 @@ import { ReactNode } from 'react'
 
 import { Collapsible } from '@radix-ui/react-collapsible';
 import { NavCollapsible, NavItem, NavLink, type NavGroup } from '@/types/data-sidebar';
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, useSidebar } from "./ui/sidebar";
-import { CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
-import { Badge } from './ui/badge';
+import { SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, useSidebar } from "@/components/ui/sidebar";
+import { CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown/dropdown-menu';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import { HorizontaLDots } from '@/icons';
@@ -15,22 +15,23 @@ import { IconChevronRight } from '@tabler/icons-react';
 
 export function NavGroup({title, items}: NavGroup){
 const { state, isExpanded, isMobile } = useSidebar();
-    console.log(state)
     return (
         <>
-            <h2
-                className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
-                  !isExpanded
-                    ? "lg:justify-center"
-                    : "justify-start"
-                }`}
-              >
-                {isExpanded || isMobile ? (
-                  title
-                ) : (
-                  <HorizontaLDots />
-                )}
-            </h2>
+            <SidebarGroupLabel>
+                <h2
+                    className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
+                    !isExpanded
+                        ? "lg:justify-center"
+                        : "justify-start"
+                    }`}
+                >
+                    {isExpanded || isMobile ? (
+                    title
+                    ) : (
+                    <HorizontaLDots />
+                    )}
+                </h2>
+            </SidebarGroupLabel>
             <SidebarMenu>
                 {items.map((item) => {
                     const key = `${item.title}-${item.href}`;

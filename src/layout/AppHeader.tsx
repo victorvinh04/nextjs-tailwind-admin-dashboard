@@ -26,13 +26,13 @@ const AppHeader: React.FC = ({
 
   const { isMobile, toggleSidebar, setOpenMobile, openMobile } = useSidebar();
 
-  const handleToggle = () => {
-    // if (window.innerWidth >= 1024) {
-    //   toggleSidebar();
-    // }
+  // const handleToggle = () => {
+  //   // if (window.innerWidth >= 1024) {
+  //   //   toggleSidebar();
+  //   // }
 
-    setOpenMobile(openMobile)
-  };
+  //   setOpenMobile(openMobile)
+  // };
   
   const toggleApplicationMenu = () => {
     setApplicationMenuOpen(!isApplicationMenuOpen);
