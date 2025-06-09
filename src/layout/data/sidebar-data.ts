@@ -1,11 +1,9 @@
-import { SidebarData } from '@/types/data-sidebar'
 import {
   IconBarrierBlock,
   IconBrowserCheck,
   IconBug,
   IconChecklist,
   IconError404,
-  IconHelp,
   IconLayoutDashboard,
   IconLock,
   IconLockAccess,
@@ -44,8 +42,9 @@ import {
   IconList,
   IconTools,
   IconVideo,
-  IconClipboard
+  IconClipboard,
 } from '@tabler/icons-react'
+import { SidebarData } from '@/types/data-sidebar';
 
 
 export const sidebarData: SidebarData = {

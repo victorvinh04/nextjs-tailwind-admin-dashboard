@@ -1,15 +1,10 @@
-'use client'
+'use client';
 
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { cn } from '@/lib/utils'
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+
 
 interface NavItem {
   label: string

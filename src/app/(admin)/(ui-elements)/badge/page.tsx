@@ -1,182 +1,181 @@
-import PageBreadcrumb from "@/components/ui/common/PageBreadCrumb";
-import { PlusIcon } from "@/icons";
-import { Metadata } from "next";
-import React from "react";
+import React from 'react'
+import { Metadata } from 'next'
 import { Badge } from '@/components/ui/badge/Badge'
+import PageBreadcrumb from '@/components/ui/common/PageBreadCrumb'
 
 export const metadata: Metadata = {
-  title: "Next.js Badge | TailAdmin - Next.js Dashboard Template",
+  title: 'Next.js Badge | TailAdmin - Next.js Dashboard Template',
   description:
-    "This is Next.js Badge page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
+    'This is Next.js Badge page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template',
   // other metadata
-};
+}
 
 export default function BadgePage() {
   return (
     <div>
-      <PageBreadcrumb pageTitle="Badges" />
-      <div className="space-y-5 sm:space-y-6">
-        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-          <div className="px-6 py-5">
-            <h3 className="text-base font-medium text-gray-800 dark:text-white/90">
+      <PageBreadcrumb pageTitle='Badges' />
+      <div className='space-y-5 sm:space-y-6'>
+        <div className='rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]'>
+          <div className='px-6 py-5'>
+            <h3 className='text-base font-medium text-gray-800 dark:text-white/90'>
               With Light Background
             </h3>
           </div>
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 xl:p-10">
-            <div className="flex flex-wrap gap-4 sm:items-center sm:justify-center">
+          <div className='border-t border-gray-100 p-6 xl:p-10 dark:border-gray-800'>
+            <div className='flex flex-wrap gap-4 sm:items-center sm:justify-center'>
               {/* Light Variant */}
-              <Badge variant="default" color="primary">
+              <Badge variant='default' color='primary'>
                 Primary
               </Badge>
-              <Badge variant="default" color="success">
+              <Badge variant='default' color='success'>
                 Success
-              </Badge>{" "}
-              <Badge variant="default" color="error">
+              </Badge>{' '}
+              <Badge variant='default' color='error'>
                 Error
-              </Badge>{" "}
-              <Badge variant="default" color="warning">
+              </Badge>{' '}
+              <Badge variant='default' color='warning'>
                 Warning
-              </Badge>{" "}
-              <Badge variant="default" color="info">
+              </Badge>{' '}
+              <Badge variant='default' color='info'>
                 Info
               </Badge>
-              <Badge variant="default" color="light">
+              <Badge variant='default' color='light'>
                 Light
               </Badge>
-              <Badge variant="default" color="dark">
+              <Badge variant='default' color='dark'>
                 Dark
               </Badge>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-          <div className="px-6 py-5">
-            <h3 className="text-base font-medium text-gray-800 dark:text-white/90">
+        <div className='rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]'>
+          <div className='px-6 py-5'>
+            <h3 className='text-base font-medium text-gray-800 dark:text-white/90'>
               With Solid Background
             </h3>
           </div>
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 xl:p-10">
-            <div className="flex flex-wrap gap-4 sm:items-center sm:justify-center">
+          <div className='border-t border-gray-100 p-6 xl:p-10 dark:border-gray-800'>
+            <div className='flex flex-wrap gap-4 sm:items-center sm:justify-center'>
               {/* Light Variant */}
-              <Badge variant="default" color="primary">
+              <Badge variant='default' color='primary'>
                 Primary
               </Badge>
-              <Badge variant="default" color="success">
+              <Badge variant='default' color='success'>
                 Success
-              </Badge>{" "}
-              <Badge variant="default" color="error">
+              </Badge>{' '}
+              <Badge variant='default' color='error'>
                 Error
-              </Badge>{" "}
-              <Badge variant="default" color="warning">
+              </Badge>{' '}
+              <Badge variant='default' color='warning'>
                 Warning
-              </Badge>{" "}
-              <Badge variant="default" color="info">
+              </Badge>{' '}
+              <Badge variant='default' color='info'>
                 Info
               </Badge>
-              <Badge variant="default" color="light">
+              <Badge variant='default' color='light'>
                 Light
               </Badge>
-              <Badge variant="default" color="dark">
+              <Badge variant='default' color='dark'>
                 Dark
               </Badge>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-          <div className="px-6 py-5">
-            <h3 className="text-base font-medium text-gray-800 dark:text-white/90">
+        <div className='rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]'>
+          <div className='px-6 py-5'>
+            <h3 className='text-base font-medium text-gray-800 dark:text-white/90'>
               Light Background with Left Icon
             </h3>
           </div>
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 xl:p-10">
-            <div className="flex flex-wrap gap-4 sm:items-center sm:justify-center">
-              <Badge variant="light" color="primary">
+          <div className='border-t border-gray-100 p-6 xl:p-10 dark:border-gray-800'>
+            <div className='flex flex-wrap gap-4 sm:items-center sm:justify-center'>
+              <Badge variant='light' color='primary'>
                 Primary
               </Badge>
-              <Badge variant="light" color="success">
+              <Badge variant='light' color='success'>
                 Success
-              </Badge>{" "}
-              <Badge variant="light" color="error">
+              </Badge>{' '}
+              <Badge variant='light' color='error'>
                 Error
-              </Badge>{" "}
-              <Badge variant="light" color="warning">
+              </Badge>{' '}
+              <Badge variant='light' color='warning'>
                 Warning
-              </Badge>{" "}
-              <Badge variant="light" color="info">
+              </Badge>{' '}
+              <Badge variant='light' color='info'>
                 Info
               </Badge>
-              <Badge variant="light" color="light">
+              <Badge variant='light' color='light'>
                 Light
               </Badge>
-              <Badge variant="light" color="dark">
+              <Badge variant='light' color='dark'>
                 Dark
               </Badge>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-          <div className="px-6 py-5">
-            <h3 className="text-base font-medium text-gray-800 dark:text-white/90">
+        <div className='rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]'>
+          <div className='px-6 py-5'>
+            <h3 className='text-base font-medium text-gray-800 dark:text-white/90'>
               Solid Background with Left Icon
             </h3>
           </div>
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 xl:p-10">
-            <div className="flex flex-wrap gap-4 sm:items-center sm:justify-center">
-              <Badge variant="default" color="primary">
+          <div className='border-t border-gray-100 p-6 xl:p-10 dark:border-gray-800'>
+            <div className='flex flex-wrap gap-4 sm:items-center sm:justify-center'>
+              <Badge variant='default' color='primary'>
                 Primary
               </Badge>
-              <Badge variant="default" color="success">
+              <Badge variant='default' color='success'>
                 Success
-              </Badge>{" "}
-              <Badge variant="default" color="error">
+              </Badge>{' '}
+              <Badge variant='default' color='error'>
                 Error
-              </Badge>{" "}
-              <Badge variant="default" color="warning">
+              </Badge>{' '}
+              <Badge variant='default' color='warning'>
                 Warning
-              </Badge>{" "}
-              <Badge variant="default" color="info">
+              </Badge>{' '}
+              <Badge variant='default' color='info'>
                 Info
               </Badge>
-              <Badge variant="default" color="light">
+              <Badge variant='default' color='light'>
                 Light
               </Badge>
-              <Badge variant="default" color="dark">
+              <Badge variant='default' color='dark'>
                 Dark
               </Badge>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-          <div className="px-6 py-5">
-            <h3 className="text-base font-medium text-gray-800 dark:text-white/90">
+        <div className='rounded-2xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]'>
+          <div className='px-6 py-5'>
+            <h3 className='text-base font-medium text-gray-800 dark:text-white/90'>
               Light Background with Right Icon
             </h3>
           </div>
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 xl:p-10">
-            <div className="flex flex-wrap gap-4 sm:items-center sm:justify-center">
-              <Badge variant="light" color="primary">
+          <div className='border-t border-gray-100 p-6 xl:p-10 dark:border-gray-800'>
+            <div className='flex flex-wrap gap-4 sm:items-center sm:justify-center'>
+              <Badge variant='light' color='primary'>
                 Primary
               </Badge>
-              <Badge variant="light" color="success">
+              <Badge variant='light' color='success'>
                 Success
-              </Badge>{" "}
-              <Badge variant="light" color="error">
+              </Badge>{' '}
+              <Badge variant='light' color='error'>
                 Error
-              </Badge>{" "}
-              <Badge variant="light" color="warning">
+              </Badge>{' '}
+              <Badge variant='light' color='warning'>
                 Warning
-              </Badge>{" "}
-              <Badge variant="light" color="info">
+              </Badge>{' '}
+              <Badge variant='light' color='info'>
                 Info
               </Badge>
-              <Badge variant="light" color="light">
+              <Badge variant='light' color='light'>
                 Light
               </Badge>
-              <Badge variant="light" color="dark">
+              <Badge variant='light' color='dark'>
                 Dark
               </Badge>
             </div>
@@ -184,5 +183,5 @@ export default function BadgePage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

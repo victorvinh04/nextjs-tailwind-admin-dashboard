@@ -1,11 +1,10 @@
-import React from "react";
-import { SignInForm } from "@/components/auth";
-import { SignIn } from "@clerk/nextjs";
+import React from 'react'
+import { SignIn } from '@clerk/nextjs'
 
 export default function SignInPage() {
   return (
     <>
-      <SignIn/>
+      <SignIn />
     </>
   )
 }

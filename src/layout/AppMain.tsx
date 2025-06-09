@@ -9,7 +9,8 @@ const AppMain = ({ fixed, ...props }: MainProps) => {
   return (
     <div
       className={cn(
-        'p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6'
+        'p-4 mx-auto max-w-(--breakpoint-2xl) md:p-6',
+        fixed
       )}
       {...props}
     />

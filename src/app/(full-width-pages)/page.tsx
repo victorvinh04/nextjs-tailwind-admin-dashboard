@@ -1,4 +1,3 @@
-import { recentSessions } from '@/constants'
 import {
   getAllCompanions,
   getRecentSessions,

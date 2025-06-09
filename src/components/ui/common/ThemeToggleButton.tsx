@@ -1,10 +1,7 @@
-"use client"
-import { useTheme } from "@/context/ThemeContext";
+"use client";
 
-// import { useTheme } from "next-themes"
-import { Moon, Sun } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import { useTheme } from '@/context/ThemeContext'
+import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown/dropdown-menu";
 
 

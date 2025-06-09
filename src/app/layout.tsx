@@ -1,8 +1,7 @@
 import Cookies from 'js-cookie'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Metadata } from 'next'
-import { Inter, Bricolage_Grotesque } from 'next/font/google'
-// import { SidebarProvider2 } from '@/context/SidebarContext';
+import { Bricolage_Grotesque } from 'next/font/google'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { SearchProvider } from '@/context/search-context'
 import { SidebarProvider } from '@/components/ui/sidebar'

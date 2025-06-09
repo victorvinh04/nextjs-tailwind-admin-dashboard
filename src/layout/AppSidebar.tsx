@@ -1,48 +1,37 @@
-"use client";
-import * as React from "react"
+'use client'
 
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import * as React from 'react'
+import { usePathname } from 'next/navigation'
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarHeader, SidebarMenuButton, SidebarMenuItem,
+  SidebarHeader,
   SidebarRail,
-  useSidebar,
 } from '@/components/ui/sidebar'
+import { NavGroup } from '@/components/nav-group'
+import { NavUser } from '@/components/nav-user'
 import { sidebarData } from './data/sidebar-data'
 
-import { usePathname } from "next/navigation";
-import { NavGroup } from "@/components/nav-group";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from 'next/link'
-import { Command } from 'lucide-react'
-
-
-export default function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>){
-  const pathname = usePathname();
-
+export default function AppSidebar({
+  ...props
+}: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" variant='floating' {...props}>
+    <Sidebar collapsible='icon' variant='floating' {...props}>
       <SidebarHeader>
         {/*<TeamSwitcher teams={sidebarData.teams} />*/}
       </SidebarHeader>
       <SidebarContent>
-        {sidebarData.navGroups.map((props) => ( 
+        {sidebarData.navGroups.map((props) => (
           <NavGroup key={props.title} {...props} />
         ))}
       </SidebarContent>
-      <SidebarFooter className="pb-4">        
-        <div className="flex items-center justify-center">
-            <NavUser user={sidebarData.user} />
+      <SidebarFooter className='pb-4'>
+        <div className='flex items-center justify-center'>
+          <NavUser user={sidebarData.user} />
         </div>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  );
-};
-
-
+  )
+}
