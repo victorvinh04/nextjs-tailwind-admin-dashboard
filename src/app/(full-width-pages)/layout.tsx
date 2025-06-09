@@ -29,7 +29,6 @@ export default function FullWidthPageLayout({
         </div>
       </nav>
       <div className='flex-1'>{children}</div>
-      <Footer />
     </div>
   )
 }
