@@ -1,3 +1,5 @@
+import { Coding, Economics, History, Language, Maths, Science } from "@/components/ui/icons";
+
 export const subjects = [
     "maths",
     "language",
@@ -25,6 +27,7 @@ export const subjects = [
     {
       id: "1",
       subject: "science",
+      icon: <Science />,
       name: "Neura the Brainy Explorer",
       topic: "Neural Network of the Brain",
       duration: 45,
@@ -33,6 +36,7 @@ export const subjects = [
     {
       id: "2",
       subject: "maths",
+          icon: <Maths />,
       name: "Countsy the Number Wizard",
       topic: "Derivatives & Integrals",
       duration: 30,
@@ -41,6 +45,7 @@ export const subjects = [
     {
       id: "3",
       subject: "language",
+          icon: <Language />,
       name: "Verba the Vocabulary Builder",
       topic: "English Literature",
       duration: 30,
@@ -49,6 +54,7 @@ export const subjects = [
     {
       id: "4",
       subject: "coding",
+          icon: <Coding />,
       name: "Codey the Logic Hacker",
       topic: "Intro to If-Else Statements",
       duration: 45,
@@ -57,6 +63,7 @@ export const subjects = [
     {
       id: "5",
       subject: "history",
+          icon: <History />,
       name: "Memo, the Memory Keeper",
       topic: "World Wars: Causes & Consequences",
       duration: 15,
@@ -65,6 +72,7 @@ export const subjects = [
     {
       id: "6",
       subject: "economics",
+          icon: <Economics />,
       name: "The Market Maestro",
       topic: "The Basics of Supply & Demand",
       duration: 10,

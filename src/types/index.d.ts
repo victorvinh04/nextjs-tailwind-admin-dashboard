@@ -18,13 +18,14 @@ enum Subject {
   }
   
   type Companion = Models.DocumentList<Models.Document> & {
-    $id: string;
-    name: string;
-    subject: Subject;
-    topic: string;
-    duration: number;
-    bookmarked: boolean;
-  };
+    $id: string
+    name: string
+    subject: Subject
+    icon: React.ReactNode
+    topic: string
+    duration: number
+    bookmarked: boolean
+  }
   
   interface CreateCompanion {
     name: string;
