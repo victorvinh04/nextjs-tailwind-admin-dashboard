@@ -1,9 +1,10 @@
-'use client'
+'use client';
 
-import Footer from '@/layout/Footer'
-import Image from 'next/image'
-import Link from 'next/link'
-import NavItems from '@/components/nav-items'
+import Footer from '@/layout/footer'
+import Image from 'next/image';
+import Link from 'next/link';
+import NavItems from '@/components/nav-items';
+
 
 export default function FullWidthPageLayout({
   children,
