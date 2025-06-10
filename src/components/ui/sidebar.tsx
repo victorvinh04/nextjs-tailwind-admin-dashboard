@@ -33,6 +33,7 @@ const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
+const MOBILE_BREAKPOINT = 768
 
 type SidebarContextProps = {
   state: "expanded" | "collapsed"
@@ -84,12 +85,11 @@ const SidebarProvider = React.forwardRef<
     },
     ref
   ) => {
-  const isMobile = useIsMobile()
+  const { isMobile } = useIsMobile()
     const [openMobile, setOpenMobile] = React.useState(false);
 
     const [isExpanded, setIsExpanded] = React.useState(true);
     const [isMobileOpen, setIsMobileOpen] = React.useState(false);
-    const [isMobileApp, setIsMobileApp] = React.useState(false);
     const [isHovered, setIsHovered] = React.useState(false);
     const [activeItem, setActiveItem] = React.useState<string | null>(null);
     const [openSubmenu, setOpenSubmenu] = React.useState<string | null>(null);
@@ -117,6 +117,7 @@ const SidebarProvider = React.forwardRef<
   const toggleSidebar = React.useCallback(() => {
     if(isMobile){
       setOpenMobile((open) => !open)
+      setIsExpanded((open) => !open);
     }
     else {
       setOpen((open) => !open);
@@ -144,27 +145,6 @@ const SidebarProvider = React.forwardRef<
   // We add a state so that we can do data-state="expanded" or "collapsed".
   // This makes it easier to style the sidebar with Tailwind classes.
   const state = open ? "expanded" : "collapsed"
-
-  React.useEffect(() => {
-      const handleResize = () => {
-        const mobile = window.innerWidth < 768;
-        setIsMobileApp(mobile);
-        if (!mobile) {
-          setIsMobileOpen(false);
-        }
-      };
-  
-      handleResize();
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-  
-    // const toggleSidebar2 = () => {
-    //   setIsExpanded((prev) => !prev);
-    // };
   
     const toggleMobileSidebar = () => {
       setIsMobileOpen((prev) => !prev);
@@ -183,7 +163,7 @@ const SidebarProvider = React.forwardRef<
       openMobile,
       setOpenMobile,
       toggleSidebar,
-      isExpanded: isMobileApp ? false : isExpanded,
+      isExpanded,
       isMobileOpen,
       isHovered,
       activeItem,
@@ -225,7 +205,7 @@ const SidebarProvider = React.forwardRef<
               } as React.CSSProperties
             }
             className={cn(
-              'group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-sidebar',
+              'group/sidebar-wrapper flex', 
               className
             )}
             ref={ref}
@@ -261,7 +241,6 @@ const Sidebar = React.forwardRef<
     ref
   ) => {
   const { isMobile, state, openMobile, setOpenMobile, isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar()
-
 
   if (collapsible === "none") {
     return (
@@ -305,69 +284,79 @@ const Sidebar = React.forwardRef<
   }
 
   return (
-    <aside      
+    <div      
       ref={ref}
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-variant={variant}
       data-side={side}
       data-slot="sidebar"
-      className={cn("fixed mt-16 text-sidebar-foreground flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200",        
-        isExpanded || isMobileOpen
+      className={cn(
+        "fixed mt-16 text-sidebar-foreground flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 md:block",        
+        isExpanded || isMobile
+            ? "w-[290px]"
+            : isHovered
             ? "w-[290px]"
             : "w-[90px]",
-        isMobileOpen ? "translate-x-0" : "-translate-x-full",
-        "lg:translate-x-0")}
-      onMouseEnter={() => !isExpanded && setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+            isExpanded ? "translate-x-0" : "-translate-x-full",
+        'lg:translate-x-0'
+        )}
     >
 
       {/* This is what handles the sidebar gap on desktop */}
-      <div
-        className={cn('py-8 flex lg:justify-center', 
-          !isExpanded
-          ? "lg:justify-center" 
-          : "justify-start"
-        )}
-      >
-        <Link href="/">
-          {isExpanded || isMobileOpen ? (
-            <>
-              <Image
-                className="dark:hidden"
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-              <Image
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              />
-            </>
-          ) : (
-            <Image
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+      <div className={cn(
+        'group-data-[collapsible=offcanvas]:w-0',
+        'group-data-[side=right]:rotate-180',
+        variant === 'floating' || variant === 'inset'
+          ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]'
+          : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon)'
+      )}>
+        <div
+          className={cn('py-8 flex lg:justify-center', 
+            !isExpanded
+            ? "lg:justify-center" 
+            : "justify-start"
           )}
-        </Link>
+        >
+          <Link href="/">
+            {isExpanded || isMobile ? (
+              <>
+                <Image
+                  className="dark:hidden"
+                  src="/images/logo/logo.svg"
+                  alt="Logo"
+                  width={150}
+                  height={40}
+                />
+                <Image
+                  className="hidden dark:block"
+                  src="/images/logo/logo-dark.svg"
+                  alt="Logo"
+                  width={150}
+                  height={40}
+                />
+              </>
+            ) : (
+              <Image
+                src="/images/logo/logo-icon.svg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+            )}
+          </Link>
+        </div>
+        <div className={cn('flex flex-col overflow-y-auto duration-300 ease-linear', className)}>
+          <nav className="mb-6">
+            <div className="flex flex-col gap-4 p-2">
+              <div>              
+                {children}
+              </div>                 
+            </div>
+          </nav>
+        </div>
       </div>
-      <div className={cn('flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar', className)}>
-        <nav className="mb-6">
-          <div className="flex flex-col gap-4 p-2">
-            <div>              
-              {children}
-            </div>                 
-          </div>
-        </nav>
-      </div>
-    </aside>
+    </div>
   )
 })
 
@@ -380,6 +369,8 @@ const SidebarTrigger = React.forwardRef<
   {
     const { toggleSidebar } = useSidebar()
 
+    // const handleToggleForSidebar = handleToggle();
+
     return (
       <Button
         ref={ref}
@@ -387,10 +378,11 @@ const SidebarTrigger = React.forwardRef<
         data-slot="sidebar-trigger"
         variant='ghost'
         size='icon'
-        className={cn('h-7 w-7', className)}
+        className={cn('items-center justify-center w-10 h-10 text-gray-500 border-gray-200 rounded-lg z-99999 dark:border-gray-800 lg:flex dark:text-gray-400 lg:h-11 lg:w-11 lg:border', className)}
         onClick={(event) => {
           onClick?.(event)
           toggleSidebar()
+          console.log(1)
         }}
         {...props}
       >

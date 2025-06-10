@@ -1,26 +1,18 @@
-"use client"
-import { IconBrandFacebook, IconBrandGithub, IconBrandGoogle, IconCircleChevronLeft, IconEye, IconEyeClosed } from '@tabler/icons-react';
-import Link from 'next/link';
+"use client";
+
 import React, { HTMLAttributes } from 'react'
-import { cn } from '@/lib/utils'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-
-import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+import { IconBrandFacebook, IconBrandGithub } from '@tabler/icons-react'
+import { ChevronLeftIcon } from '@/icons'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { PasswordInput } from '@/components/ui/form/password-input';
-import { ChevronLeftIcon } from "@/icons";
+import { Input } from '@/components/ui/input';
+
 
 const formSchema = z
   .object({

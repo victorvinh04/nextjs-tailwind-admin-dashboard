@@ -62,7 +62,6 @@ interface SidebarData {
   teams: Team[]
   navGroups: NavGroup[]
   navMain: NavMain[]
-  projects: Project[]
 }
 
 export type { SidebarData, NavGroup, NavItem, NavCollapsible, NavLink }

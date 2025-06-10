@@ -21,7 +21,7 @@ export const EcommerceMetrics = () => {
               3,782
             </h4>
           </div>
-          <Badge color="success">
+          <Badge color="success" className="text-gray-500 dark:text-gray-400">
             <ArrowUpIcon />
             11.01%
           </Badge>
@@ -44,7 +44,7 @@ export const EcommerceMetrics = () => {
             </h4>
           </div>
 
-          <Badge color="error">
+          <Badge color="error" className="text-gray-500 dark:text-gray-400">
             <ArrowDownIcon className="text-error-500" />
             9.05%
           </Badge>
